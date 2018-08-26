@@ -140,11 +140,12 @@ public class FortuneTeller {
 			}
 			System.exit(0);
 		}
+		// check to see if they actually entered an int for their age
 		try {
 			Integer.parseInt(userAge);
 		} catch (NumberFormatException string) {
-			// they entered a string and not an int
-			String ohNoYouDont = "Sorry, that's not a real age. Try again.";
+			// they entered a string and not an int, shame!!! try again
+			String ohNoYouDont = "Sorry, please enter your age as a number. Try again.";
 			int ohNoYouDontLength = ohNoYouDont.length();
 			int ohNoYouDontPrint = 0;
 			while (ohNoYouDontLength > 0) {
@@ -155,6 +156,7 @@ public class FortuneTeller {
 			}
 			System.out.println(" ");
 			userAge = input.nextLine();
+			// check to see if they're going to quit
 			if (userAge.equalsIgnoreCase("quit")) {
 				String quitShaming = "Nobody likes a quitter...";
 				int quitShamingLength = quitShaming.length();
@@ -167,11 +169,13 @@ public class FortuneTeller {
 				}
 				System.exit(0);
 			} else {
+				// check to see if they are being cheeky
 				try {
 					Integer.parseInt(userAge);
 				} catch (NumberFormatException string2) {
-					// they entered a string and not an int
-					String assignAge = "Sorry, that's not a real age. You're now 1000.";
+					// they entered a string and not an int, now we're going to assign their age for
+					// them
+					String assignAge = "Now you're just being rude. You're now 1000.";
 					int assignAgeLength = assignAge.length();
 					int assignAgePrint = 0;
 					while (assignAgeLength > 0) {
@@ -185,6 +189,7 @@ public class FortuneTeller {
 				}
 			}
 		}
+		// parse their age to an int
 		Integer.parseInt(userAge);
 
 		// Ask the user for their birth month as an integer
@@ -213,11 +218,58 @@ public class FortuneTeller {
 			}
 			System.exit(0);
 		} else {
+			try {
+				Integer.parseInt(userBirthMonth);
+			} catch (NumberFormatException string3) {
+				// they entered a string and not an int, call them out and give them one more
+				// chance
+				String excuseYou = "You didn't enter a number... please try again.";
+				int excuseYouLength = excuseYou.length();
+				int excuseYouPrint = 0;
+				while (excuseYouLength > 0) {
+					System.out.print(excuseYou.charAt(excuseYouPrint));
+					Thread.sleep(90);
+					--excuseYouLength;
+					++excuseYouPrint;
+				}
+				System.out.println(" ");
+				userBirthMonth = input.nextLine();
+				if (userBirthMonth.equalsIgnoreCase("quit")) {
+					String quitShaming = "Nobody likes a quitter...";
+					int quitShamingLength = quitShaming.length();
+					int quitShamingPrint = 0;
+					while (quitShamingLength > 0) {
+						System.out.print(quitShaming.charAt(quitShamingPrint));
+						Thread.sleep(90);
+						--quitShamingLength;
+						++quitShamingPrint;
+					}
+					System.exit(0);
+				} else {
+					try {
+						Integer.parseInt(userBirthMonth);
+					} catch (NumberFormatException string4) {
+						// they entered a string and not an int, call them out and give them one more
+						// chance
+						String assignBirthMonth = "You didn't enter a number... \n We'll just say December";
+						int assignBirthMonthLength = assignBirthMonth.length();
+						int assignBirthMonthPrint = 0;
+						while (assignBirthMonthLength > 0) {
+							System.out.print(assignBirthMonth.charAt(assignBirthMonthPrint));
+							Thread.sleep(90);
+							--assignBirthMonthLength;
+							++assignBirthMonthPrint;
+							userBirthMonth = "12";
+						}
+						System.out.println(" ");
+					}
+				}
+			}
 			Integer.parseInt(userBirthMonth);
 		}
 
 		// Ask for the user's favorite ROYGBIV color and offer help if they need it
-		String getRoygbivColor = "Thank you. Now, of the ROYGBIV colors, which is your favorite? \nIf you don't know what ROYGBIV is, "
+		String getRoygbivColor = "Now, of the ROYGBIV colors, which is your favorite? \nIf you don't know what ROYGBIV is, "
 				+ "simply ask for \"help\".";
 		int getRoygbivColorLength = getRoygbivColor.length();
 		int getRoygbivColorPrint = 0;
@@ -286,9 +338,53 @@ public class FortuneTeller {
 			}
 			System.exit(0);
 		} else {
+			try {
+				Integer.parseInt(userSiblings);
+			} catch (NumberFormatException string5) {
+				// they entered a string instead of an int. Ask them to try again
+				String tryAgain = "Please enter your answer as a number";
+				int tryAgainLength = tryAgain.length();
+				int tryAgainPrint = 0;
+				while (tryAgainLength > 0) {
+					System.out.print(tryAgain.charAt(tryAgainPrint));
+					Thread.sleep(90);
+					--tryAgainLength;
+					++tryAgainPrint;
+				}
+				System.out.println(" ");
+				userSiblings = input.nextLine();
+				if (userSiblings.equalsIgnoreCase("quit")) {
+					String quitShaming = "Nobody likes a quitter...";
+					int quitShamingLength = quitShaming.length();
+					int quitShamingPrint = 0;
+					while (quitShamingLength > 0) {
+						System.out.print(quitShaming.charAt(quitShamingPrint));
+						Thread.sleep(90);
+						--quitShamingLength;
+						++quitShamingPrint;
+					}
+					System.exit(0);
+				} else {
+					try {
+						Integer.parseInt(userSiblings);
+					} catch (NumberFormatException string6) {
+						// they entered a string instead of an int. Ask them to try again
+						String assignSiblings = "Clearly you're an only child";
+						int assignSiblingLength = assignSiblings.length();
+						int assignSiblingPrint = 0;
+						while (assignSiblingLength > 0) {
+							System.out.print(assignSiblings.charAt(assignSiblingPrint));
+							Thread.sleep(90);
+							--assignSiblingLength;
+							++assignSiblingPrint;
+							userSiblings = "0";
+						}
+						System.out.println(" ");
+					}
+				}
+			}
 			Integer.parseInt(userSiblings);
 		}
-
 		// declare variable for number of years until retirement so I can make this
 		// different based on a users age
 		int retirementNumYears;
