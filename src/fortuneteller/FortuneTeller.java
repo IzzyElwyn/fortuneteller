@@ -16,10 +16,10 @@ public class FortuneTeller {
 		Scanner input = new Scanner(System.in);
 		// setup for currency for bank balance
 		NumberFormat currency = NumberFormat.getCurrencyInstance(Locale.US);
+		// set for checking local time
 		LocalTime today = LocalTime.now();
 
 		// get the current time of day to be specific with greeting message
-		// using Calendar class to get current day/time
 		int currentHour = today.getHour();
 		String greeting;
 		if (currentHour < 12) {
