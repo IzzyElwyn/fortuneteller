@@ -139,12 +139,56 @@ public class FortuneTeller {
 				++quitShamingPrint;
 			}
 			System.exit(0);
-		} else {
-			Integer.parseInt(userAge);
 		}
+		try {
+			Integer.parseInt(userAge);
+		} catch (NumberFormatException string) {
+			// they entered a string and not an int
+			String ohNoYouDont = "Sorry, that's not a real age. Try again.";
+			int ohNoYouDontLength = ohNoYouDont.length();
+			int ohNoYouDontPrint = 0;
+			while (ohNoYouDontLength > 0) {
+				System.out.print(ohNoYouDont.charAt(ohNoYouDontPrint));
+				Thread.sleep(90);
+				--ohNoYouDontLength;
+				++ohNoYouDontPrint;
+			}
+			System.out.println(" ");
+			userAge = input.nextLine();
+			if (userAge.equalsIgnoreCase("quit")) {
+				String quitShaming = "Nobody likes a quitter...";
+				int quitShamingLength = quitShaming.length();
+				int quitShamingPrint = 0;
+				while (quitShamingLength > 0) {
+					System.out.print(quitShaming.charAt(quitShamingPrint));
+					Thread.sleep(90);
+					--quitShamingLength;
+					++quitShamingPrint;
+				}
+				System.exit(0);
+			} else {
+				try {
+					Integer.parseInt(userAge);
+				} catch (NumberFormatException string2) {
+					// they entered a string and not an int
+					String assignAge = "Sorry, that's not a real age. You're now 1000.";
+					int assignAgeLength = assignAge.length();
+					int assignAgePrint = 0;
+					while (assignAgeLength > 0) {
+						System.out.print(assignAge.charAt(assignAgePrint));
+						Thread.sleep(90);
+						--assignAgeLength;
+						++assignAgePrint;
+						userAge = "100";
+					}
+					System.out.println(" ");
+				}
+			}
+		}
+		Integer.parseInt(userAge);
 
 		// Ask the user for their birth month as an integer
-		String getBirthMonth = "Excellent. And what is the number of the month in which you were born?";
+		String getBirthMonth = "And what is the number of the month in which you were born?";
 		int getBirthMonthLength = getBirthMonth.length();
 		int getBirthMonthPrint = 0;
 		while (getBirthMonthLength > 0) {
