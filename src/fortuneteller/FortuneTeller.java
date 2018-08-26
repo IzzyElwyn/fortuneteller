@@ -467,9 +467,9 @@ public class FortuneTeller {
 
 		// if/else to set their bankBalance based on the month in which they were born
 		if (Integer.parseInt(userBirthMonth) > 6 && Integer.parseInt(userBirthMonth) < 12) {
-			bankBalance = (Integer.parseInt(userBirthMonth) * 8.5) * Integer.parseInt(userBirthMonth);
+			bankBalance = (Integer.parseInt(userBirthMonth) * 100.6) * Integer.parseInt(userBirthMonth);
 		} else if (Integer.parseInt(userBirthMonth) < 6 && Integer.parseInt(userBirthMonth) > 0) {
-			bankBalance = (Integer.parseInt(userBirthMonth) * 9.75) * Integer.parseInt(userBirthMonth);
+			bankBalance = (Integer.parseInt(userBirthMonth) * 120.75) * Integer.parseInt(userBirthMonth);
 		} else {
 			bankBalance = 0.00;
 		}
