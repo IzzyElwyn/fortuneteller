@@ -10,7 +10,6 @@ public class FortuneTeller {
 	public static void main(String[] args) throws InterruptedException {
 
 		// added throws InterruptedException so I could use sleep between printed characters
-		// this adds a level of creepy interactivity for the virtual fortune teller
 		// setup for user input
 		Scanner input = new Scanner(System.in);
 		// setup for currency for bank balance
@@ -18,7 +17,7 @@ public class FortuneTeller {
 		// set for checking local time
 		LocalTime today = LocalTime.now();
 
-		// get the current time of day to be specific with greeting message
+		// get the current time of day to be specific with greeting/farewell message
 		int currentHour = today.getHour();
 		String greeting;
 		if (currentHour < 12) {
