@@ -9,8 +9,7 @@ public class FortuneTeller {
 
 	public static void main(String[] args) throws InterruptedException {
 
-		// added throws InterruptedException so I could use sleep between printed
-		// characters
+		// added throws InterruptedException so I could use sleep between printed characters
 		// this adds a level of creepy interactivity for the virtual fortune teller
 		// setup for user input
 		Scanner input = new Scanner(System.in);
