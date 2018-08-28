@@ -113,7 +113,7 @@ public class FortuneTeller {
 		}
 
 		// Ask for the user's age
-		String getAge = ("Lovely. And how old are you?");
+		String getAge = ("And how old are you?");
 		int getAgeLength = getAge.length();
 		int getAgePrint = 0;
 		while (getAgeLength > 0) {
@@ -511,7 +511,7 @@ public class FortuneTeller {
 				++farewellPrint;
 			}
 		} else {
-			farewell = "\nHave a Good night...";
+			farewell = "\nHave a good night...";
 			int farewellLength = farewell.length();
 			int farewellPrint = 0;
 
