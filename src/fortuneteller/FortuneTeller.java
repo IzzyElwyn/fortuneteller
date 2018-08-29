@@ -8,7 +8,6 @@ import java.util.Scanner;
 public class FortuneTeller {
 
 	public static void main(String[] args) throws InterruptedException {
-		
 
 		// added throws InterruptedException in order to utilize sleep
 		// sleep in my slowType method to create a delay effect in printing strings
@@ -18,88 +17,59 @@ public class FortuneTeller {
 		NumberFormat currency = NumberFormat.getCurrencyInstance(Locale.US);
 		LocalTime today = LocalTime.now();
 
+		// set quit shaming message here, since I'll be using it A LOT
+		String quitShaming = "\nNobody likes a quitter...";
+
 		// get the current time of day to be specific with greeting/farewell message
 		int currentHour = today.getHour();
 		String greeting;
 		if (currentHour < 12) {
 			greeting = "Good Morning...";
-			
 			slowType(greeting);
-			
-			}
-		 else if (currentHour > 12 && currentHour < 17) {
-			greeting = "Good Afternoon...";
 
+		} else if (currentHour > 12 && currentHour < 17) {
+			greeting = "Good Afternoon...";
 			slowType(greeting);
-			
+
 		} else {
 			greeting = "Good Evening...";
-
 			slowType(greeting);
-			}
-		
+		}
 
 		// Ask for the user's first name
 		String getFirstName = "\nWhat is your first name?\n";
-		
 		slowType(getFirstName);
 
 		String firstName = input.nextLine();
 
 		// Check the input to see if user wants to quit
 		if (firstName.equalsIgnoreCase("quit")) {
-			String quitShaming = "\nNobody likes a quitter...";
-			
 			slowType(quitShaming);
 			System.exit(0);
 		}
-		
 
 		// Ask for the user's last name
 		String getLastName = ("Thank you, " + firstName + ". \nNow, what is your last name?\n");
-		
 		slowType(getLastName);
 
 		String lastName = input.nextLine();
-		
+
 		// Check the input to see if user wants to quit
 		if (lastName.equalsIgnoreCase("quit")) {
-			String quitShaming = "\nNobody likes a quitter...";
-			int quitShamingLength = quitShaming.length();
-			int quitShamingPrint = 0;
-			while (quitShamingLength > 0) {
-				System.out.print(quitShaming.charAt(quitShamingPrint));
-				Thread.sleep(50);
-				--quitShamingLength;
-				++quitShamingPrint;
-			}
+			slowType(quitShaming);
 			System.exit(0);
 		}
 
 		// Ask for the user's age
 		String getAge = ("And how old are you?\n");
-		int getAgeLength = getAge.length();
-		int getAgePrint = 0;
-		while (getAgeLength > 0) {
-			System.out.print(getAge.charAt(getAgePrint));
-			Thread.sleep(50);
-			--getAgeLength;
-			++getAgePrint;
-		}
+		slowType(getAge);
 
 		String userAge = input.nextLine();
 
 		// Check the input to see if user wants to quit
 		if (userAge.equalsIgnoreCase("quit")) {
-			String quitShaming = "\nNobody likes a quitter...";
-			int quitShamingLength = quitShaming.length();
-			int quitShamingPrint = 0;
-			while (quitShamingLength > 0) {
-				System.out.print(quitShaming.charAt(quitShamingPrint));
-				Thread.sleep(50);
-				--quitShamingLength;
-				++quitShamingPrint;
-			}
+			slowType(quitShaming);
+
 			System.exit(0);
 		}
 
@@ -109,26 +79,13 @@ public class FortuneTeller {
 		} catch (NumberFormatException ageCheck) {
 			// they entered a string and not an int, prompt them to re-enter their age
 			String promptAgeReentry = "Please enter your age as a number.\n";
-			int promptAgeReentryLength = promptAgeReentry.length();
-			int promptAgeReentryPrint = 0;
-			while (promptAgeReentryLength > 0) {
-				System.out.print(promptAgeReentry.charAt(promptAgeReentryPrint));
-				Thread.sleep(50);
-				--promptAgeReentryLength;
-				++promptAgeReentryPrint;
-			}
+			slowType(promptAgeReentry);
+
 			userAge = input.nextLine();
+
 			// check to see if they're going to quit
 			if (userAge.equalsIgnoreCase("quit")) {
-				String quitShaming = "\nNobody likes a quitter...";
-				int quitShamingLength = quitShaming.length();
-				int quitShamingPrint = 0;
-				while (quitShamingLength > 0) {
-					System.out.print(quitShaming.charAt(quitShamingPrint));
-					Thread.sleep(50);
-					--quitShamingLength;
-					++quitShamingPrint;
-				}
+				slowType(quitShaming);
 				System.exit(0);
 			} else {
 				// check to see if they entered another string
@@ -137,42 +94,20 @@ public class FortuneTeller {
 				} catch (NumberFormatException ageCheck2) {
 					// they entered a string again, now we're going to assign their age for them
 					String assignAge = "Now you're just being obtuse. We'll say your age is 8.\n";
-					int assignAgeLength = assignAge.length();
-					int assignAgePrint = 0;
-					while (assignAgeLength > 0) {
-						System.out.print(assignAge.charAt(assignAgePrint));
-						Thread.sleep(50);
-						--assignAgeLength;
-						++assignAgePrint;
-						userAge = "8";
-					}
+					slowType(assignAge);
+					userAge = "8";
 				}
 			}
 		}
-		
+
 		// Ask the user for their birth month as an integer
 		String getBirthMonth = "And what is the number of the month in which you were born?\n";
-		int getBirthMonthLength = getBirthMonth.length();
-		int getBirthMonthPrint = 0;
-		while (getBirthMonthLength > 0) {
-			System.out.print(getBirthMonth.charAt(getBirthMonthPrint));
-			Thread.sleep(50);
-			--getBirthMonthLength;
-			++getBirthMonthPrint;
-		}
+		slowType(getBirthMonth);
 
 		String userBirthMonth = input.nextLine();
 		// Check the input to use if user wants to quit
 		if (userBirthMonth.equalsIgnoreCase("quit")) {
-			String quitShaming = "\nNobody likes a quitter...";
-			int quitShamingLength = quitShaming.length();
-			int quitShamingPrint = 0;
-			while (quitShamingLength > 0) {
-				System.out.print(quitShaming.charAt(quitShamingPrint));
-				Thread.sleep(50);
-				--quitShamingLength;
-				++quitShamingPrint;
-			}
+			slowType(quitShaming);
 			System.exit(0);
 		} else {
 			try {
@@ -180,28 +115,13 @@ public class FortuneTeller {
 			} catch (NumberFormatException monthCheck) {
 				// they entered a string and not an int, give them one more chance
 				String promptMonthNumReentry = "Please enter the Number of your birth month. \nExample: if you were born in January, enter \"1\"\n";
-				int promptMonthNumReentryLength = promptMonthNumReentry.length();
-				int promptMonthNumReentryPrint = 0;
-				while (promptMonthNumReentryLength > 0) {
-					System.out.print(promptMonthNumReentry.charAt(promptMonthNumReentryPrint));
-					Thread.sleep(50);
-					--promptMonthNumReentryLength;
-					++promptMonthNumReentryPrint;
-				}
+				slowType(promptMonthNumReentry);
 
 				userBirthMonth = input.nextLine();
 
 				// check to see if they want to quit
 				if (userBirthMonth.equalsIgnoreCase("quit")) {
-					String quitShaming = "\nNobody likes a quitter...";
-					int quitShamingLength = quitShaming.length();
-					int quitShamingPrint = 0;
-					while (quitShamingLength > 0) {
-						System.out.print(quitShaming.charAt(quitShamingPrint));
-						Thread.sleep(50);
-						--quitShamingLength;
-						++quitShamingPrint;
-					}
+					slowType(quitShaming);
 					System.exit(0);
 				} else {
 					try {
@@ -209,15 +129,8 @@ public class FortuneTeller {
 					} catch (NumberFormatException string4) {
 						// they entered a string again,assign a birth month
 						String assignBirthMonth = "You didn't enter a number... \nWe'll just say December\n";
-						int assignBirthMonthLength = assignBirthMonth.length();
-						int assignBirthMonthPrint = 0;
-						while (assignBirthMonthLength > 0) {
-							System.out.print(assignBirthMonth.charAt(assignBirthMonthPrint));
-							Thread.sleep(50);
-							--assignBirthMonthLength;
-							++assignBirthMonthPrint;
-							userBirthMonth = "12";
-						}
+						slowType(assignBirthMonth);
+						userBirthMonth = "12";
 					}
 				}
 			}
@@ -225,14 +138,7 @@ public class FortuneTeller {
 
 		// Ask for the user's favorite ROYGBIV color and offer help if they need it
 		String getRoygbivColor = "Now, of the ROYGBIV colors, which is your favorite? \nIf you don't know what ROYGBIV is, simply ask for \"help\".\n";
-		int getRoygbivColorLength = getRoygbivColor.length();
-		int getRoygbivColorPrint = 0;
-		while (getRoygbivColorLength > 0) {
-			System.out.print(getRoygbivColor.charAt(getRoygbivColorPrint));
-			Thread.sleep(50);
-			--getRoygbivColorLength;
-			++getRoygbivColorPrint;
-		}
+		slowType(getRoygbivColor);
 
 		String userColor = input.nextLine();
 		// do a while loop to check for 'help' as the input and provide explanation
@@ -240,27 +146,12 @@ public class FortuneTeller {
 		// if user quits let them exit
 		while (userColor.equalsIgnoreCase("help")) {
 			String roygbivHelp = "The ROYGBIV colors are red, orange, yellow, green, blue, indigo, and violet \nWhich ROYGBIV color is your favorite?\n";
-			int roygbivHelpLength = roygbivHelp.length();
-			int roygbivHelpPrint = 0;
-			while (roygbivHelpLength > 0) {
-				System.out.print(roygbivHelp.charAt(roygbivHelpPrint));
-				Thread.sleep(50);
-				--roygbivHelpLength;
-				++roygbivHelpPrint;
-			}
+			slowType(roygbivHelp);
 			userColor = input.nextLine();
 		}
 		// Check the input to see if user wants to quit
 		if (userColor.equalsIgnoreCase("quit")) {
-			String quitShaming = "\nNobody likes a quitter...";
-			int quitShamingLength = quitShaming.length();
-			int quitShamingPrint = 0;
-			while (quitShamingLength > 0) {
-				System.out.print(quitShaming.charAt(quitShamingPrint));
-				Thread.sleep(50);
-				--quitShamingLength;
-				++quitShamingPrint;
-			}
+			slowType(quitShaming);
 			System.exit(0);
 		}
 
@@ -276,18 +167,10 @@ public class FortuneTeller {
 		}
 
 		String userSiblings = input.nextLine();
-		
+
 		// Check the input to see if user wants to quit
 		if (userSiblings.equalsIgnoreCase("quit")) {
-			String quitShaming = "\nNobody likes a quitter...";
-			int quitShamingLength = quitShaming.length();
-			int quitShamingPrint = 0;
-			while (quitShamingLength > 0) {
-				System.out.print(quitShaming.charAt(quitShamingPrint));
-				Thread.sleep(50);
-				--quitShamingLength;
-				++quitShamingPrint;
-			}
+			slowType(quitShaming);
 			System.exit(0);
 		} else {
 			try {
@@ -295,27 +178,12 @@ public class FortuneTeller {
 			} catch (NumberFormatException siblingCheck) {
 				// they entered a string instead of an int. Ask them to try again
 				String promptSiblingNumReentry = "Please enter your answer as a number.\n";
-				int promptSiblingNumReentryLength = promptSiblingNumReentry.length();
-				int promptSiblingNumReentryPrint = 0;
-				while (promptSiblingNumReentryLength > 0) {
-					System.out.print(promptSiblingNumReentry.charAt(promptSiblingNumReentryPrint));
-					Thread.sleep(50);
-					--promptSiblingNumReentryLength;
-					++promptSiblingNumReentryPrint;
-				}
-				
+				slowType(promptSiblingNumReentry);
+
 				userSiblings = input.nextLine();
-				
+
 				if (userSiblings.equalsIgnoreCase("quit")) {
-					String quitShaming = "\nNobody likes a quitter...";
-					int quitShamingLength = quitShaming.length();
-					int quitShamingPrint = 0;
-					while (quitShamingLength > 0) {
-						System.out.print(quitShaming.charAt(quitShamingPrint));
-						Thread.sleep(50);
-						--quitShamingLength;
-						++quitShamingPrint;
-					}
+					slowType(quitShaming);
 					System.exit(0);
 				} else {
 					try {
@@ -323,19 +191,11 @@ public class FortuneTeller {
 					} catch (NumberFormatException siblingCheck2) {
 						// they entered a string again. Assign them no siblings
 						String assignSiblings = "Clearly you're an only child.\n";
-						int assignSiblingLength = assignSiblings.length();
-						int assignSiblingPrint = 0;
-						while (assignSiblingLength > 0) {
-							System.out.print(assignSiblings.charAt(assignSiblingPrint));
-							Thread.sleep(50);
-							--assignSiblingLength;
-							++assignSiblingPrint;
-							userSiblings = "0";
-						}
+						slowType(assignSiblings);
+						userSiblings = "0";
 					}
 				}
 			}
-			Integer.parseInt(userSiblings);
 		}
 
 		int retirementNumYears;
@@ -419,57 +279,25 @@ public class FortuneTeller {
 		String finalPrediction = "\n" + firstName + " " + lastName + " will retire in " + retirementYears + " with "
 				+ currency.format(bankBalance) + " in " + "the bank, \na vacation home in " + vacationHome
 				+ ", and travel by " + transportMode + ".";
-		int finalPredictionLength = finalPrediction.length();
-		int finalPredictionPrint = 0;
-		while (finalPredictionLength > 0) {
-			System.out.print(finalPrediction.charAt(finalPredictionPrint));
-			Thread.sleep(50);
-			--finalPredictionLength;
-			++finalPredictionPrint;
-		}
+		slowType(finalPrediction);
 
 		// bid the user a time-appropriate goodbye
 		System.out.println(" ");
 		String farewell;
 		if (currentHour < 12) {
 			farewell = "\nHave a lovely day...";
-			int farewellLength = farewell.length();
-			int farewellPrint = 0;
-
-			while (farewellLength > 0) {
-				System.out.print(farewell.charAt(farewellPrint));
-				Thread.sleep(50);
-				--farewellLength;
-				++farewellPrint;
-			}
+			slowType(farewell);
 		} else if (currentHour > 12 && currentHour < 17) {
 			farewell = "\nHave a lovely afternoon...";
-			int farewellLength = farewell.length();
-			int farewellPrint = 0;
-
-			while (farewellLength > 0) {
-				System.out.print(farewell.charAt(farewellPrint));
-				Thread.sleep(50);
-				--farewellLength;
-				++farewellPrint;
-			}
+			slowType(farewell);
 		} else {
 			farewell = "\nHave a good night...";
-			int farewellLength = farewell.length();
-			int farewellPrint = 0;
-
-			while (farewellLength > 0) {
-				System.out.print(farewell.charAt(farewellPrint));
-				Thread.sleep(50);
-				--farewellLength;
-				++farewellPrint;
-			}
+			slowType(farewell);
 		}
 
 		input.close();
 	}
 
-	
 	public static void slowType(String phrase) throws InterruptedException {
 		int phraseLength = phrase.length();
 		int phrasePrintChar = 0;
@@ -481,7 +309,3 @@ public class FortuneTeller {
 		}
 	}
 }
-		
-	
-
-
