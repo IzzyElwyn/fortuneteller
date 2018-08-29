@@ -38,7 +38,6 @@ public class FortuneTeller {
 
 		// Ask for the user's first name
 		String getFirstName = "\nWhat is your first name?\n";
-
 		slowType(getFirstName);
 
 		String firstName = input.nextLine();
