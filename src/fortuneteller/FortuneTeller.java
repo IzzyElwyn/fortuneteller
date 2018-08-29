@@ -57,7 +57,7 @@ public class FortuneTeller {
 
 
 		// Ask for the user's first name
-		String getFirstName = "\nWhat is your first name?";
+		String getFirstName = "\nWhat is your first name?\n";
 		int getFirstNameLength = getFirstName.length();
 		int getFirstNamePrint = 0;
 		while (getFirstNameLength > 0) {
@@ -71,7 +71,7 @@ public class FortuneTeller {
 
 		// Check the input to see if user wants to quit
 		if (firstName.equalsIgnoreCase("quit")) {
-			String quitShaming = "Nobody likes a quitter...";
+			String quitShaming = "\nNobody likes a quitter...";
 			int quitShamingLength = quitShaming.length();
 			int quitShamingPrint = 0;
 			while (quitShamingLength > 0) {
@@ -84,7 +84,7 @@ public class FortuneTeller {
 		}
 
 		// Ask for the user's last name
-		String getLastName = ("Thank you, " + firstName + ". \nNow, what is your last name?");
+		String getLastName = ("Thank you, " + firstName + ". \nNow, what is your last name?\n");
 		int getLastNameLength = getLastName.length();
 		int getLastNamePrint = 0;
 		while (getLastNameLength > 0) {
@@ -111,7 +111,7 @@ public class FortuneTeller {
 		}
 
 		// Ask for the user's age
-		String getAge = ("\nAnd how old are you?");
+		String getAge = ("And how old are you?\n");
 		int getAgeLength = getAge.length();
 		int getAgePrint = 0;
 		while (getAgeLength > 0) {
@@ -142,7 +142,7 @@ public class FortuneTeller {
 			Integer.parseInt(userAge);
 		} catch (NumberFormatException ageCheck) {
 			// they entered a string and not an int, prompt them to re-enter their age
-			String promptAgeReentry = "\nPlease enter your age as a number.";
+			String promptAgeReentry = "Please enter your age as a number.\n";
 			int promptAgeReentryLength = promptAgeReentry.length();
 			int promptAgeReentryPrint = 0;
 			while (promptAgeReentryLength > 0) {
@@ -170,7 +170,7 @@ public class FortuneTeller {
 					Integer.parseInt(userAge);
 				} catch (NumberFormatException ageCheck2) {
 					// they entered a string again, now we're going to assign their age for them
-					String assignAge = "\nNow you're just being obtuse. We'll say your age is 8.";
+					String assignAge = "Now you're just being obtuse. We'll say your age is 8.\n";
 					int assignAgeLength = assignAge.length();
 					int assignAgePrint = 0;
 					while (assignAgeLength > 0) {
@@ -185,7 +185,7 @@ public class FortuneTeller {
 		}
 		
 		// Ask the user for their birth month as an integer
-		String getBirthMonth = "\nAnd what is the number of the month in which you were born?";
+		String getBirthMonth = "And what is the number of the month in which you were born?\n";
 		int getBirthMonthLength = getBirthMonth.length();
 		int getBirthMonthPrint = 0;
 		while (getBirthMonthLength > 0) {
@@ -213,7 +213,7 @@ public class FortuneTeller {
 				Integer.parseInt(userBirthMonth);
 			} catch (NumberFormatException monthCheck) {
 				// they entered a string and not an int, give them one more chance
-				String promptMonthNumReentry = "\nPlease enter the Number of your birth month. \nExample: if you were born in January, enter \"1\"";
+				String promptMonthNumReentry = "Please enter the Number of your birth month. \nExample: if you were born in January, enter \"1\"\n";
 				int promptMonthNumReentryLength = promptMonthNumReentry.length();
 				int promptMonthNumReentryPrint = 0;
 				while (promptMonthNumReentryLength > 0) {
@@ -242,7 +242,7 @@ public class FortuneTeller {
 						Integer.parseInt(userBirthMonth);
 					} catch (NumberFormatException string4) {
 						// they entered a string again,assign a birth month
-						String assignBirthMonth = "\nYou didn't enter a number... \nWe'll just say December";
+						String assignBirthMonth = "You didn't enter a number... \nWe'll just say December\n";
 						int assignBirthMonthLength = assignBirthMonth.length();
 						int assignBirthMonthPrint = 0;
 						while (assignBirthMonthLength > 0) {
@@ -258,7 +258,7 @@ public class FortuneTeller {
 		}
 
 		// Ask for the user's favorite ROYGBIV color and offer help if they need it
-		String getRoygbivColor = "\nNow, of the ROYGBIV colors, which is your favorite? \nIf you don't know what ROYGBIV is, simply ask for \"help\".";
+		String getRoygbivColor = "Now, of the ROYGBIV colors, which is your favorite? \nIf you don't know what ROYGBIV is, simply ask for \"help\".\n";
 		int getRoygbivColorLength = getRoygbivColor.length();
 		int getRoygbivColorPrint = 0;
 		while (getRoygbivColorLength > 0) {
@@ -273,7 +273,7 @@ public class FortuneTeller {
 		// prompt to re-enter color choice, loops if they ask for help again
 		// if user quits let them exit
 		while (userColor.equalsIgnoreCase("help")) {
-			String roygbivHelp = "\nThe ROYGBIV colors are red, orange, yellow, green, blue, indigo, and violet \nWhich ROYGBIV color is your favorite?";
+			String roygbivHelp = "The ROYGBIV colors are red, orange, yellow, green, blue, indigo, and violet \nWhich ROYGBIV color is your favorite?\n";
 			int roygbivHelpLength = roygbivHelp.length();
 			int roygbivHelpPrint = 0;
 			while (roygbivHelpLength > 0) {
@@ -299,7 +299,7 @@ public class FortuneTeller {
 		}
 
 		// Ask for the user's number of siblings
-		String getSiblingCount = "\nLast question, how many siblings do you have?";
+		String getSiblingCount = "Last question, how many siblings do you have?\n";
 		int getSiblingCountLength = getSiblingCount.length();
 		int getSiblingCountPrint = 0;
 		while (getSiblingCountLength > 0) {
@@ -328,7 +328,7 @@ public class FortuneTeller {
 				Integer.parseInt(userSiblings);
 			} catch (NumberFormatException siblingCheck) {
 				// they entered a string instead of an int. Ask them to try again
-				String promptSiblingNumReentry = "\nPlease enter your answer as a number.";
+				String promptSiblingNumReentry = "Please enter your answer as a number.\n";
 				int promptSiblingNumReentryLength = promptSiblingNumReentry.length();
 				int promptSiblingNumReentryPrint = 0;
 				while (promptSiblingNumReentryLength > 0) {
@@ -356,7 +356,7 @@ public class FortuneTeller {
 						Integer.parseInt(userSiblings);
 					} catch (NumberFormatException siblingCheck2) {
 						// they entered a string again. Assign them no siblings
-						String assignSiblings = "\nClearly you're an only child.";
+						String assignSiblings = "Clearly you're an only child.\n";
 						int assignSiblingLength = assignSiblings.length();
 						int assignSiblingPrint = 0;
 						while (assignSiblingLength > 0) {
@@ -443,7 +443,7 @@ public class FortuneTeller {
 		// set their bankBalance based on the month in which they were born
 		if (Integer.parseInt(userBirthMonth) >= 6 && Integer.parseInt(userBirthMonth) <= 12) {
 			bankBalance = (Integer.parseInt(userBirthMonth) * 100.6) * Integer.parseInt(userBirthMonth);
-		} else if (Integer.parseInt(userBirthMonth) <= 6 && Integer.parseInt(userBirthMonth) > 0) {
+		} else if (Integer.parseInt(userBirthMonth) < 6 && Integer.parseInt(userBirthMonth) > 0) {
 			bankBalance = (Integer.parseInt(userBirthMonth) * 120.75) * Integer.parseInt(userBirthMonth);
 		} else {
 			bankBalance = 0.00;
