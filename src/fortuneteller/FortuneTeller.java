@@ -126,7 +126,7 @@ public class FortuneTeller {
 				} else {
 					try {
 						Integer.parseInt(userBirthMonth);
-					} catch (NumberFormatException string4) {
+					} catch (NumberFormatException MonthCheck2) {
 						// they entered a string again,assign a birth month
 						String assignBirthMonth = "You didn't enter a number... \nWe'll just say December\n";
 						slowType(assignBirthMonth);
